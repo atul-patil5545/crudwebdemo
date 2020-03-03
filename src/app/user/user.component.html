@@ -1,0 +1,59 @@
+<script>
+    $('#myList a').on('click', function(e) {
+        e.preventDefault()
+        $(this).tab('show')
+        $('#myList a[href="#profile"]').tab('show') // Select tab by name
+        $('#myList a:first-child').tab('show') // Select first tab
+        $('#myList a:last-child').tab('show') // Select last tab
+        $('#myList a:nth-child(3)').tab('show') // Select third tab
+    })
+</script>
+<section class="mt-5"><hr>
+    <div class="container  mt-5">
+        <h1 class="text-center">User Information</h1>
+        <div class="row mt-5 mb-5 user">
+
+            <div class="col-4 col-md-5 col-sm-6">
+                <div class="list-group text-center" id="list-tab" role="tablist">
+                    <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Student</a>
+                    <a class="list-group-item list-group-item-action " id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Teacher</a>
+                    <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">Office</a>
+                    <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">Ground</a>
+                </div>
+            </div>
+            <div class="col-8 col-md-7 col-sm-6">
+                <div class="tab-content" id="nav-tabContent">
+                    <div class="tab-pane frist fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
+                        <div *ngIf="newsdata"> 
+                            <div *ngFor="let news of newsdata">
+                                <h3>author</h3> 
+                                {{news.author}}
+                               <img [src]="news.urlToImage" height="300px" width="200px"/>
+                             </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane second fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">
+                        <div *ngIf="newsdata">
+                        <div *ngFor="let news of newsdata">
+                            <h2>Title</h2>
+                            {{news.title}}
+
+                        </div>
+                    </div>
+                    </div>
+                    <div class="tab-pane second fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">
+                        <div *ngIf="newsdata">
+                            <div *ngFor="let news of newsdata" id="example">
+                                <h3>Discription</h3>
+                                {{news.description}}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane second fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">Electrical power distribution systems are often connected to ground to limit the voltage that can appear on distribution circuits. A distribution system insulated from ground may attain a high potential due to transient voltages caused
+                        by arcing, static electricity, or accidental contact with higher potential circuits. A ground connection of the system dissipates such potentials and limits the rise in voltage of the grounded system. In a mains electricity (AC
+                        power) wiring installation, the term ground conductor typically refers to three different conductors or conductor systems.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
