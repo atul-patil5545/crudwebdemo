@@ -9,8 +9,8 @@
     })
 </script>
 <section class="mt-5"><hr>
-    <div class="container  mt-5">
-        <h1 class="text-center">User Information</h1>
+    <div class="container  mt-5 mb-5">
+        <h1 class="text-center">User Information</h1><hr>
         <div class="row mt-5 mb-5 user">
 
             <div class="col-4 col-md-5 col-sm-6">
@@ -23,7 +23,7 @@
             </div>
             <div class="col-8 col-md-7 col-sm-6">
                 <div class="tab-content" id="nav-tabContent">
-                    <div class="tab-pane frist fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
+                    <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
                         <div *ngIf="newsdata"> 
                             <div *ngFor="let news of newsdata">
                                 <h3>author</h3> 
@@ -32,7 +32,7 @@
                              </div>
                         </div>
                     </div>
-                    <div class="tab-pane second fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">
+                    <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">
                         <div *ngIf="newsdata">
                         <div *ngFor="let news of newsdata">
                             <h2>Title</h2>
@@ -41,15 +41,15 @@
                         </div>
                     </div>
                     </div>
-                    <div class="tab-pane second fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">
+                    <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">
                         <div *ngIf="newsdata">
                             <div *ngFor="let news of newsdata" id="example">
                                 <h3>Discription</h3>
-                                {{news.description}}
+                                {{news.discription}}
                             </div>
                         </div>
                     </div>
-                    <div class="tab-pane second fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">Electrical power distribution systems are often connected to ground to limit the voltage that can appear on distribution circuits. A distribution system insulated from ground may attain a high potential due to transient voltages caused
+                    <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">Electrical power distribution systems are often connected to ground to limit the voltage that can appear on distribution circuits. A distribution system insulated from ground may attain a high potential due to transient voltages caused
                         by arcing, static electricity, or accidental contact with higher potential circuits. A ground connection of the system dissipates such potentials and limits the rise in voltage of the grounded system. In a mains electricity (AC
                         power) wiring installation, the term ground conductor typically refers to three different conductors or conductor systems.</div>
                 </div>

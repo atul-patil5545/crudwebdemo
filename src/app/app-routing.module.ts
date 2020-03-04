@@ -7,14 +7,13 @@ import { AboutComponent } from './about/about.component';
 
 const routes: Routes = [
   { path: 'getin', component: GetinComponent },
-  { path: 'blog', component:WelcomeTextComponent },
-  {path: 'about', component:AboutComponent},
-  {path: '', redirectTo: '', pathMatch: 'full'},
-  
+  { path: 'blog', component: WelcomeTextComponent },
+  {path: 'about', component: AboutComponent},
+  {path: '', redirectTo: '', pathMatch: 'full'}
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const routingComponants=[ContactFormComponent]
+export const routingComponants = [ContactFormComponent];
