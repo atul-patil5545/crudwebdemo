@@ -26,17 +26,17 @@
                     <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
                         <div *ngIf="newsdata"> 
                             <div *ngFor="let news of newsdata">
-                                <h3>author</h3> 
-                                {{news.author}}
-                               <img [src]="news.urlToImage" height="300px" width="200px"/>
+                                <!-- <h3>author</h3>  -->
+                                {{news.student}}
+                               <!-- <img [src]="news.urlToImage" height="300px" width="200px"/> -->
                              </div>
                         </div>
                     </div>
                     <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">
                         <div *ngIf="newsdata">
                         <div *ngFor="let news of newsdata">
-                            <h2>Title</h2>
-                            {{news.title}}
+                            <!-- <h2>Title</h2> -->
+                            {{news.teacher}}
 
                         </div>
                     </div>
@@ -44,14 +44,19 @@
                     <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">
                         <div *ngIf="newsdata">
                             <div *ngFor="let news of newsdata" id="example">
-                                <h3>Discription</h3>
-                                {{news.discription}}
+                                <!-- <h3>Discription</h3> -->
+                                {{news.office}}
                             </div>
                         </div>
                     </div>
-                    <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">Electrical power distribution systems are often connected to ground to limit the voltage that can appear on distribution circuits. A distribution system insulated from ground may attain a high potential due to transient voltages caused
-                        by arcing, static electricity, or accidental contact with higher potential circuits. A ground connection of the system dissipates such potentials and limits the rise in voltage of the grounded system. In a mains electricity (AC
-                        power) wiring installation, the term ground conductor typically refers to three different conductors or conductor systems.</div>
+                    <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">
+                        <div *ngIf="newsdata">
+                            <div *ngFor="let news of newsdata" id="example">
+                                <!-- <h3>Discription</h3> -->
+                                {{news.ground}}
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-
+import { MessageService } from '../appservices/message.service';
 @Component({
   selector: 'app-getin',
   templateUrl: './getin.component.html',
@@ -19,6 +19,10 @@ export class GetinComponent implements OnInit {
     });
   }
 
+  btnClick() {
+    const msgService =new MessageService();
+    msgService.mesageAlert();
+  }
   onSubmit() {
     console.log(this.myReactiveForm);
   }
