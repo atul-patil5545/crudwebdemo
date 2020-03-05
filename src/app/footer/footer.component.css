@@ -8,9 +8,7 @@ section .section-title {
     margin-bottom: 50px;
     text-transform: uppercase;
 }
-#footer{
-	width: 100%;
-}
+
 #footer h5{
     padding-bottom: 6px;
     color:#ffffff;

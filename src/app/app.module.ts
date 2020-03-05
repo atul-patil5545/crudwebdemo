@@ -11,11 +11,8 @@ import { CommonModule } from '@angular/common';
 import { BlogComponent } from './blog/blog.component';
 import { AboutComponent } from './about/about.component';
 import { GetinComponent } from './getin/getin.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { ReactiveFormsModule } from '@angular/forms';
-
-
 @NgModule({
   declarations: [
     AppComponent,
