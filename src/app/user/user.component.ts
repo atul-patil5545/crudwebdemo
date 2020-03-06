@@ -24,7 +24,7 @@ export class UserComponent implements OnInit {
     this.getGround();
   }
   getStudent(): void {
-    const url = 'http://192.168.1.114/api/s_demo.php';
+    const url = 'http://192.168.1.116/api/s_demo.php';
     this.http.get(url).subscribe(res => {
     this.resStudent = res;
     this.newsstudent = this.resStudent.data;
@@ -33,7 +33,7 @@ export class UserComponent implements OnInit {
   }
 
   getTeacher(): void {
-    const url = 'http://192.168.1.114/api/t_demo.php';
+    const url = 'http://192.168.1.116/api/t_demo.php';
     this.http.get(url).subscribe(res => {
     this.resTeacher = res;
     this.newsteacher = this.resTeacher.data;
@@ -42,7 +42,7 @@ export class UserComponent implements OnInit {
   }
 
   getOffice(): void {
-    const url = 'http://192.168.1.114/api/o_demo.php';
+    const url = 'http://192.168.1.116/api/o_demo.php';
     this.http.get(url).subscribe(res => {
     this.resoffice = res;
     this.newsoffice = this.resoffice.data;
@@ -51,7 +51,7 @@ export class UserComponent implements OnInit {
   }
 
   getGround(): void {
-    const url = 'http://192.168.1.114/api/g_demo.php';
+    const url = 'http://192.168.1.116/api/g_demo.php';
     this.http.get(url).subscribe(res => {
     this.resData = res;
     this.newsdata = this.resData.data;

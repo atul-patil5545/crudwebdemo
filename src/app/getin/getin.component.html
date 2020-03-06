@@ -29,7 +29,7 @@
         <div class="row">
                <!--Grid column-->
                <div class="col-md-8 offset-md-2 mb-md-0 mb-5">
-                <form [formGroup]="myReactiveForm" (ngSubmit)="submitForm()">
+                <form [formGroup]="myReactiveForm" id="contact-form" role="form" >
 
                     <!--Grid row-->
                     <div class=" row ">
@@ -38,7 +38,8 @@
                         <div class="col-md-6 ">
                             <div class="md-form mb-0 ">
                                 <label for="name">Your name</label>
-                                <input type="text " id="name" formControlName="name" class="form-control " required>
+                                {{myReactiveForm.controls.name.value}}
+                                <input type="text " id="name" formControlName="name" class="form-control ">
                                 <small class="text-danger"
                                     *ngIf="!myReactiveForm.get('name').valid && myReactiveForm.get('name').touched">Please Enter Valid Name</small>
                             </div>
@@ -88,9 +89,11 @@
                         </div>
                     </div>
                     <!--Grid row-->
-                    <div class="text-center text-md-left ">
-                        <!-- <button (click)="btnClick()" >ok</button> -->
-                        <input type="submit" (click)="btnClick()" class="btn btn-md-block bg-primary text-white" formControlName="submit">
+                    <div class="text-center text-md-left">
+                        <!-- <input type="submit" (click)="btnClick()" class="btn btn-md-block bg-primary text-white" formControlName="submit"> -->
+                        <button class="btn btn-primary mr-2" [disabled]="!myReactiveForm.valid" (click)="submitForm()">Submit</button>
+                        <button class="btn btn-danger" (click)="reset()">Reset</button>
+
                     </div>
                 </form>
             </div>
