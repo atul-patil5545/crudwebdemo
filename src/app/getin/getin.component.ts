@@ -29,7 +29,7 @@ export class GetinComponent implements OnInit {
     msgService.reset();
   }
   onSubmit() {
-    console.log("on submit called");
+    console.log('on submit called');
     console.log(this.myReactiveForm);
     if (this.myReactiveForm.valid) {
       console.log('Form Submitted Successfully');
@@ -46,9 +46,9 @@ export class GetinComponent implements OnInit {
 
   submitForm() {
     // tslint:disable-next-line: prefer-const
-    console.log("submitForm called");
-    let data: any = new FormData();
-    let sendBody=JSON.stringify(this.myReactiveForm.value);
+    console.log('submitForm called');
+    const data: any = new FormData();
+    const sendBody = JSON.stringify(this.myReactiveForm.value);
     data.append('name', this.myReactiveForm.controls.name.value);
     data.append('email', this.myReactiveForm.controls.email.value);
     data.append('subject', this.myReactiveForm.controls.subject.value);

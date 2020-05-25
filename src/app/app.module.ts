@@ -1,3 +1,4 @@
+import { TestData } from './testdata';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule, routingComponants } from './app-routing.module';
@@ -13,6 +14,11 @@ import { AboutComponent } from './about/about.component';
 import { GetinComponent } from './getin/getin.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { ApipostComponent } from './apipost/apipost.component';
+import { BookService } from './book.service';
+import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { ChildComponent } from './child/child.component';
+import { ParentComponent } from './parent/parent.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +30,10 @@ import { HttpClientModule } from '@angular/common/http';
     routingComponants,
     BlogComponent,
     AboutComponent,
-    GetinComponent
+    GetinComponent,
+    ApipostComponent,
+    ChildComponent,
+    ParentComponent
   ],
   imports: [
     BrowserModule,
@@ -32,9 +41,10 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    InMemoryWebApiModule.forRoot(TestData),
     CommonModule
   ],
-  providers: [],
+  providers: [BookService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

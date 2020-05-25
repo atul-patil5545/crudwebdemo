@@ -1,0 +1,64 @@
+<section class="mb-4 mt-5"><hr>
+  <div class="container">
+      <!--Section heading-->
+      <h1 class="h1-responsive  text-center mt-5 my-4">Api Post On Page</h1><hr>
+      <!--Section description-->
+      <p class="text-center w-responsive mx-auto">Do you have any questions? Please do not hesitate to contact us directly. Our team will come back to you within a matter of hours to help you.</p>
+      <h3 *ngIf='datasaved' ngClass='Success' class="text-center">
+          Record Saved Successfully!!!
+      </h3><hr>
+      <div class="row">
+             <!--Grid column-->
+             <div class="col-md-6 offset-md-1  mb-md-0 mb-5">
+              <form [formGroup]='bookForm' (ngSubmit)= onFormSubmit()>
+
+                  <!--Grid row-->
+                  <div class="row">
+                      <div class="col-md-12">
+                              <div class="col-md-12 p-2">
+                                <h3 class="text-left ml-5">Enter Data</h3>
+                                  <label for="" class="p-2"> Name : </label>
+                                  <input formControlName='name'>
+                               </div>
+                      </div>
+                      <div class="col-md-12 p-2">
+                          <label for="" class="p-2"> Category </label>
+                          <input formControlName='category'>
+                      </div>
+                      <div class="col-md-12 p-2">
+                          <label for="" class="p-2"> Writer :</label>
+                          <input class="ml-2" formControlName='writer'>
+                      </div>
+                  </div>
+                  <div class="text-center text-md-left ml-3">
+                      <button class="btn btn-primary ml-5 mr-2 " [disabled]="!bookForm.valid">Post</button>
+                      <button class="btn btn-danger" (click)="reset()">Reset</button>
+
+                  </div>
+              </form>
+          </div>
+          <div class="col-md-4">
+              <h3 class="text-center">View</h3>
+              <table class="table table-bordered mt-3">
+
+                  <tr>
+                      <th> Id </th>
+                      <th> Name </th>
+                      <th> Category </th>
+                      <th> Writer </th>
+                      <th> Update </th>
+                      <th> Delete </th>
+                  </tr>
+                  <tr *ngFor="let bk of allbooks|async">
+                      <td>{{bk.id}}</td>
+                      <td>{{bk.name}}</td>
+                      <td>{{bk.category}}</td>
+                      <td>{{bk.writer}}</td>
+                      <td><button type="button" class="btn bg-primary" (click)="booktoedit(bk.id)">Edit</button></td>
+                      <td><button type="button" class="btn bg-danger" (click)="bookdelete(bk.id)">Delete</button></td>
+                  </tr>
+              </table>
+          </div>
+      </div>
+  </div>
+</section>

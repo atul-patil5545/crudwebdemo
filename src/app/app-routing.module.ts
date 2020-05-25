@@ -1,3 +1,4 @@
+import { ApipostComponent } from './apipost/apipost.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ContactFormComponent } from './contact-form/contact-form.component';
@@ -9,6 +10,7 @@ const routes: Routes = [
   { path: 'getin', component: GetinComponent },
   { path: 'blog', component: WelcomeTextComponent },
   {path: 'about', component: AboutComponent},
+  {path: 'apipost', component: ApipostComponent},
   {path: '', redirectTo: '', pathMatch: 'full'}
 ];
 @NgModule({
